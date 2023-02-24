@@ -1,0 +1,11 @@
+<h1>SHOW list by id</h1>
+
+<p><%= @list.name %></p>
+
+<p><% movies = @list.movies %></p>
+  <% movies.each do |movie| %>
+  <p><%= movie.title %></p>
+  <p><%= movie.overview %></p>
+  <p><%= movie.poster_url %></p>
+  <p><%= movie.rating %></p>
+<% end %>
