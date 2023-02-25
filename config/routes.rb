@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :lists, only: [:index, :show, :new, :create, :destroy] do
-    resources :bookmarks, only: [:index, :show, :create, :new]
-    # bookmarks same 4 destroy separate
+    resources :bookmarks, only: [:create, :new]
+    resources :reviews, only: :create
   end
-
+  resources :bookmarks, only: :destroy
+  resources :reviews, only: :destroy
 end
