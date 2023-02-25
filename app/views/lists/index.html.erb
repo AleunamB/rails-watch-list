@@ -1,8 +1,15 @@
-<h1>Lists all</h1>
-<p>Find me in app/views/lists/index.html.erb</p>
+<h1>Lists all "Homepage"</h1>
+
+<ul>
+  <% @lists.each do |list| %>
+    <li>
+      <p><%= link_to list.name, list_path(list) %></p>
+      <p><%= link_to "Delete", list_path(list),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+    </li>
+  <% end %>
+</ul>
 
 <div>
-  <% @lists.each do |list| %>
-    <p><%= list.name %></p>
-  <% end %>
+  <%= link_to "New list", new_list_path %>
 </div>
