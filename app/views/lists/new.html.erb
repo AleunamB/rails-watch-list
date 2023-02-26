@@ -2,11 +2,12 @@
 
 <%= simple_form_for @list do |f| %>
     <%= f.input :name %>
+    <%= f.input :photo, as: :file %>
     <%= f.submit class: "btn btn-primary"%>
+
 <% end %>
 
 
 <div>
   <%= link_to "Back to all Lists", lists_path %>
 </div>
-
